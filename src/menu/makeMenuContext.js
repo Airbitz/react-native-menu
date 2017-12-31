@@ -180,7 +180,8 @@ module.exports = (React, ReactNative, { model, styles }) => {
       const options = this._options[name];
       const { w: menuWidth, px: menuPX, py: menuPY } = menuMeasurements;
       const { w: ownWidth, px: ownPX, py: ownPY } = this._ownMeasurements;
-      const optionsTop = menuPY - ownPY;
+      const adjustment = menuPY - (this._ownMeasurements.h - (menuMeasurements.h * 5) - 20) > 0 ? (menuPY - (this._ownMeasurements.h - (menuMeasurements.h * 5) - 30)) : 0
+      const optionsTop = menuPY - ownPY - adjustment;
       const optionsRight = ownWidth + ownPX - menuPX - menuWidth;
       return makeOptions(options, { top: optionsTop, right: optionsRight });
     },
