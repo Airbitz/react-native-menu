@@ -11,6 +11,9 @@ es/
 lib/
 umd/
 
+# IDEs
+.idea/
+
 # misc
 .DS_Store
 .env.local
